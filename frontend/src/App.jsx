@@ -1,6 +1,6 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import Home from "./pages/Home";      // <--- La nueva página principal
+import Home from "./pages/Home"; 
 import Login from "./pages/Login"; 
 import Dashboard from "./pages/Dashboard"; 
 import Donate from "./pages/Donante"; 
@@ -10,20 +10,23 @@ import "./App.css";
 function App() {
   return (
     <Routes>
-      {/* 1. Página de Inicio Pública - Quienes somos, impacto y redes */}
+      {/* Página de Inicio Pública */}
       <Route path="/" element={<Home />} />
       
-      {/* 2. Login - Ahora accesible desde /login */}
+      {/* Login */}
       <Route path="/login" element={<Login />} />
       
-      {/* 3. Admin - El Dashboard de gráficas */}
+      {/* Dashboard Admin */}
       <Route path="/dashboard" element={<Dashboard />} />
 
-      {/* 4. Donante - El formulario de donación */}
+      {/* Vista de Donante */}
       <Route path="/donante" element={<Donate />} />
 
-      {/* 5. Voluntario - Rutas y recolección */}
+      {/* Vista de Voluntario */}
       <Route path="/voluntario" element={<Volunteer />} />
+      
+      {/* Ruta por defecto (en caso de error 404 interno) */}
+      <Route path="*" element={<Home />} />
     </Routes>
   );
 }

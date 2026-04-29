@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../styles/atoms/Logo.css';
+import '../../style/atoms/Logo.css';
 
 const Logo = () => {
 const LOGO_URL = process.env.PUBLIC_URL + '/Donaton.png'; // ruta de la imagen en public

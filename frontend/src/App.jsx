@@ -1,25 +1,29 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";      // <--- La nueva página principal
 import Login from "./pages/Login"; 
 import Dashboard from "./pages/Dashboard"; 
 import Donate from "./pages/Donante"; 
-import Volunteer from "./pages/Volunteer"; // <--- 1. Importamos la nueva página
+import Volunteer from "./pages/Volunteer"; 
 import "./App.css";
 
 function App() {
   return (
     <Routes>
-      {/* 1. Login - La entrada */}
-      <Route path="/" element={<Login />} />
+      {/* 1. Página de Inicio Pública - Quienes somos, impacto y redes */}
+      <Route path="/" element={<Home />} />
       
-      {/* 2. Admin - El Dashboard de gráficas */}
+      {/* 2. Login - Ahora accesible desde /login */}
+      <Route path="/login" element={<Login />} />
+      
+      {/* 3. Admin - El Dashboard de gráficas */}
       <Route path="/dashboard" element={<Dashboard />} />
 
-      {/* 3. Donante - El formulario de donación */}
+      {/* 4. Donante - El formulario de donación */}
       <Route path="/donante" element={<Donate />} />
 
-      {/* 4. Voluntario - Rutas y recolección */}
-      <Route path="/voluntario" element={<Volunteer />} /> {/* <--- 2. Añadimos la ruta */}
+      {/* 5. Voluntario - Rutas y recolección */}
+      <Route path="/voluntario" element={<Volunteer />} />
     </Routes>
   );
 }

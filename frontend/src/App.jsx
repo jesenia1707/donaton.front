@@ -5,27 +5,26 @@ import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard"; 
 import Donate from "./pages/Donante"; 
 import Volunteer from "./pages/Volunteer"; 
+import Register from "./pages/Register"; 
+// 1. Importamos la nueva página de seguimiento
+import SeguimientoPage from "./pages/SeguimientoPage"; 
 import "./App.css";
 
 function App() {
   return (
     <Routes>
-      {/* Página de Inicio Pública */}
       <Route path="/" element={<Home />} />
-      
-      {/* Login */}
       <Route path="/login" element={<Login />} />
-      
-      {/* Dashboard Admin */}
+      <Route path="/register" element={<Register />} />
       <Route path="/dashboard" element={<Dashboard />} />
-
-      {/* Vista de Donante */}
       <Route path="/donante" element={<Donate />} />
-
-      {/* Vista de Voluntario */}
       <Route path="/voluntario" element={<Volunteer />} />
       
-      {/* Ruta por defecto (en caso de error 404 interno) */}
+      {/* 2. Añadimos la ruta de seguimiento con parámetro ID */}
+      {/* El ":id" permite que la URL sea /seguimiento/1, /seguimiento/2, etc. */}
+      <Route path="/seguimiento/:id" element={<SeguimientoPage />} />
+
+      {/* Ruta comodín para redirigir si la URL no existe */}
       <Route path="*" element={<Home />} />
     </Routes>
   );

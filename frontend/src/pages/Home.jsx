@@ -39,7 +39,6 @@ function Home() {
               borderRadius: "10px",
             }}
           />
-
           <h2
             style={{
               margin: 0,
@@ -52,13 +51,7 @@ function Home() {
           </h2>
         </div>
 
-        <div
-          style={{
-            display: "flex",
-            gap: "30px",
-            alignItems: "center",
-          }}
-        >
+        <div style={{ display: "flex", gap: "20px", alignItems: "center" }}>
           <a
             href="#nosotros"
             style={{
@@ -69,7 +62,21 @@ function Home() {
           >
             Nosotros
           </a>
-
+          <button
+            onClick={() => navigate("/register")}
+            style={{
+              background: "transparent",
+              color: "#6366f1",
+              border: "2px solid #6366f1",
+              padding: "10px 20px",
+              borderRadius: "12px",
+              fontWeight: "bold",
+              cursor: "pointer",
+              transition: "all 0.3s ease",
+            }}
+          >
+            Crear Cuenta
+          </button>
           <button
             onClick={() => navigate("/login")}
             style={{
@@ -81,6 +88,7 @@ function Home() {
               fontWeight: "bold",
               cursor: "pointer",
               boxShadow: "0 4px 12px rgba(99,102,241,0.3)",
+              transition: "all 0.3s ease",
             }}
           >
             Iniciar Sesión
@@ -93,8 +101,7 @@ function Home() {
         style={{
           padding: "120px 10%",
           textAlign: "center",
-          background:
-            "linear-gradient(135deg, #eef4ff 0%, #dbeafe 50%, #e0e7ff 100%)",
+          background: "linear-gradient(135deg, #eef4ff 0%, #dbeafe 50%, #e0e7ff 100%)",
         }}
       >
         <h1
@@ -106,12 +113,10 @@ function Home() {
             color: "#0f172a",
           }}
         >
-          Conectando{" "}
-          <span style={{ color: "#6366f1" }}>Corazones</span>,
+          Conectando <span style={{ color: "#6366f1" }}>Corazones</span>,
           <br />
           Entregando Esperanza
         </h1>
-
         <p
           style={{
             color: "#475569",
@@ -125,6 +130,24 @@ function Home() {
           comunidades en riesgo, uniendo a donantes generosos con voluntarios
           imparables.
         </p>
+        <div style={{ marginTop: "40px", display: "flex", gap: "20px", justifyContent: "center" }}>
+          <button 
+            onClick={() => navigate("/register")}
+            style={{ 
+              padding: "15px 35px", 
+              borderRadius: "50px", 
+              border: "none", 
+              background: "#6366f1", 
+              color: "white", 
+              fontWeight: "bold", 
+              fontSize: "1.1rem", 
+              cursor: "pointer",
+              boxShadow: "0 10px 20px rgba(99,102,241,0.2)"
+            }}
+          >
+            Quiero Ayudar Hoy
+          </button>
+        </div>
       </header>
 
       {/* NOSOTROS */}
@@ -141,16 +164,9 @@ function Home() {
         }}
       >
         <div style={{ flex: "1", minWidth: "300px" }}>
-          <h2
-            style={{
-              fontSize: "2.5rem",
-              marginBottom: "20px",
-              color: "#0f172a",
-            }}
-          >
+          <h2 style={{ fontSize: "2.5rem", marginBottom: "20px", color: "#0f172a" }}>
             ¿Quiénes Somos?
           </h2>
-
           <div
             style={{
               width: "70px",
@@ -160,21 +176,13 @@ function Home() {
               borderRadius: "10px",
             }}
           ></div>
-
-          <p
-            style={{
-              color: "#475569",
-              fontSize: "1.1rem",
-              lineHeight: "1.9",
-            }}
-          >
+          <p style={{ color: "#475569", fontSize: "1.1rem", lineHeight: "1.9" }}>
             Somos una plataforma logística sin fines de lucro nacida de la
             necesidad de transparentar y agilizar las donaciones. Nuestra misión
             es asegurar que cada alimento, prenda o medicina llegue a su destino
             en tiempo récord.
           </p>
         </div>
-
         <div
           style={{
             flex: "1",
@@ -187,32 +195,17 @@ function Home() {
             boxShadow: "0 8px 25px rgba(0,0,0,0.06)",
           }}
         >
-          <img
-            src="/Donaton.png"
-            alt="Logo"
-            style={{
-              width: "180px",
-              marginBottom: "20px",
-            }}
-          />
-
-          <h3
-            style={{
-              color: "#4f46e5",
-              fontSize: "1.5rem",
-            }}
-          >
-            Logística Solidaria
-          </h3>
+          <img src="/Donaton.png" alt="Logo" style={{ width: "180px", marginBottom: "20px" }} />
+          <h3 style={{ color: "#4f46e5", fontSize: "1.5rem" }}>Logística Solidaria</h3>
         </div>
       </section>
 
       {/* FOOTER */}
       <footer
         style={{
-          background: "#ffffff",
+          background: "#111827",
           padding: "70px 10% 30px",
-          borderTop: "1px solid #dbe4f0",
+          color: "white",
         }}
       >
         <div
@@ -224,46 +217,87 @@ function Home() {
         >
           <div>
             <h3 style={{ color: "#6366f1" }}>Donatón</h3>
-
-            <p
-              style={{
-                color: "#64748b",
-                lineHeight: "1.6",
-              }}
-            >
+            <p style={{ color: "#94a3b8", lineHeight: "1.6" }}>
               Transformando la manera en que el mundo ayuda.
             </p>
           </div>
 
+          {/* REDES SOCIALES CON EFECTO LUZ */}
           <div style={{ textAlign: "center" }}>
-            <h4 style={{ color: "#0f172a" }}>Síguenos</h4>
-
-            <div
-              style={{
-                display: "flex",
-                gap: "20px",
-                justifyContent: "center",
-                marginTop: "20px",
-              }}
-            >
-              <a href="https://instagram.com">📸</a>
-              <a href="https://twitter.com">🐦</a>
-              <a href="https://facebook.com">📘</a>
+            <h4 style={{ color: "white", marginBottom: "20px" }}>Síguenos</h4>
+            <div style={{ display: 'flex', gap: '25px', justifyContent: 'center', alignItems: 'center' }}>
+              {/* Instagram */}
+              <a href="https://instagram.com" target="_blank" rel="noreferrer">
+                <img 
+                  src="https://cdn.simpleicons.org/instagram/white" 
+                  alt="Instagram" 
+                  style={{ width: '28px', height: '28px', transition: '0.3s', cursor: 'pointer' }} 
+                  onMouseOver={(e) => {
+                    e.target.style.filter = 'drop-shadow(0 0 10px #E4405F)';
+                    e.target.style.transform = 'scale(1.2)';
+                  }}
+                  onMouseOut={(e) => {
+                    e.target.style.filter = 'none';
+                    e.target.style.transform = 'scale(1)';
+                  }}
+                />
+              </a>
+              {/* Twitter (X) */}
+              <a href="https://twitter.com" target="_blank" rel="noreferrer">
+                <img 
+                  src="https://cdn.simpleicons.org/x/white" 
+                  alt="Twitter" 
+                  style={{ width: '28px', height: '28px', transition: '0.3s', cursor: 'pointer' }} 
+                  onMouseOver={(e) => {
+                    e.target.style.filter = 'drop-shadow(0 0 10px #ffffff)';
+                    e.target.style.transform = 'scale(1.2)';
+                  }}
+                  onMouseOut={(e) => {
+                    e.target.style.filter = 'none';
+                    e.target.style.transform = 'scale(1)';
+                  }}
+                />
+              </a>
+              {/* Facebook */}
+              <a href="https://facebook.com" target="_blank" rel="noreferrer">
+                <img 
+                  src="https://cdn.simpleicons.org/facebook/white" 
+                  alt="Facebook" 
+                  style={{ width: '28px', height: '28px', transition: '0.3s', cursor: 'pointer' }} 
+                  onMouseOver={(e) => {
+                    e.target.style.filter = 'drop-shadow(0 0 10px #1877F2)';
+                    e.target.style.transform = 'scale(1.2)';
+                  }}
+                  onMouseOut={(e) => {
+                    e.target.style.filter = 'none';
+                    e.target.style.transform = 'scale(1)';
+                  }}
+                />
+              </a>
+              {/* YouTube */}
+              <a href="https://youtube.com" target="_blank" rel="noreferrer">
+                <img 
+                  src="https://cdn.simpleicons.org/youtube/white" 
+                  alt="YouTube" 
+                  style={{ width: '28px', height: '28px', transition: '0.3s', cursor: 'pointer' }} 
+                  onMouseOver={(e) => {
+                    e.target.style.filter = 'drop-shadow(0 0 10px #FF0000)';
+                    e.target.style.transform = 'scale(1.2)';
+                  }}
+                  onMouseOut={(e) => {
+                    e.target.style.filter = 'none';
+                    e.target.style.transform = 'scale(1)';
+                  }}
+                />
+              </a>
             </div>
           </div>
 
           <div>
-            <h4 style={{ color: "#0f172a" }}>Soporte</h4>
-
-            <p
-              style={{
-                color: "#64748b",
-                marginBottom: "20px",
-              }}
-            >
+            <h4 style={{ color: "white" }}>Soporte</h4>
+            <p style={{ color: "#94a3b8", marginBottom: "20px" }}>
               ¿Tienes dudas sobre cómo donar?
             </p>
-
             <button
               style={{
                 background: "#6366f1",
@@ -286,8 +320,8 @@ function Home() {
             textAlign: "center",
             marginTop: "50px",
             paddingTop: "20px",
-            borderTop: "1px solid #e2e8f0",
-            color: "#94a3b8",
+            borderTop: "1px solid #1f2937",
+            color: "#6b7280",
             fontSize: "0.9rem",
           }}
         >

@@ -6,8 +6,8 @@ import Dashboard from "./pages/Dashboard";
 import Donate from "./pages/Donante"; 
 import Volunteer from "./pages/Volunteer"; 
 import Register from "./pages/Register"; 
-// 1. Importamos la nueva página de seguimiento
 import SeguimientoPage from "./pages/SeguimientoPage"; 
+import MapaPage from "./pages/MapaPage"; // Importación lista
 import "./App.css";
 
 function App() {
@@ -19,12 +19,12 @@ function App() {
       <Route path="/dashboard" element={<Dashboard />} />
       <Route path="/donante" element={<Donate />} />
       <Route path="/voluntario" element={<Volunteer />} />
-      
-      {/* 2. Añadimos la ruta de seguimiento con parámetro ID */}
-      {/* El ":id" permite que la URL sea /seguimiento/1, /seguimiento/2, etc. */}
       <Route path="/seguimiento/:id" element={<SeguimientoPage />} />
 
-      {/* Ruta comodín para redirigir si la URL no existe */}
+      {/* ESTA ES LA LÍNEA QUE FALTABA: */}
+      <Route path="/mapa" element={<MapaPage />} />
+
+      {/* Ruta comodín */}
       <Route path="*" element={<Home />} />
     </Routes>
   );

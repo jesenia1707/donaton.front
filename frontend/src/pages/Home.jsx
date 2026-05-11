@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import MapaPage from "./MapaPage"; // Importamos el componente del mapa
 import "../App.css";
 
 function Home() {
@@ -61,6 +62,17 @@ function Home() {
             }}
           >
             Nosotros
+          </a>
+          {/* Botón para navegar al mapa directamente */}
+          <a
+            href="#mapa-seccion"
+            style={{
+              color: "#475569",
+              textDecoration: "none",
+              fontWeight: "600",
+            }}
+          >
+            Ver Mapa
           </a>
           <button
             onClick={() => navigate("/register")}
@@ -200,6 +212,32 @@ function Home() {
         </div>
       </section>
 
+      {/* SECCIÓN DEL MAPA AGREGADA */}
+      <section 
+        id="mapa-seccion" 
+        style={{ 
+          padding: "80px 10%", 
+          background: "#fff",
+          textAlign: "center" 
+        }}
+      >
+        <h2 style={{ fontSize: "2.5rem", color: "#0f172a", marginBottom: "10px" }}>
+          Centros de Acopio Cercanos
+        </h2>
+        <p style={{ color: "#475569", marginBottom: "40px", fontSize: "1.1rem" }}>
+          Encuentra el punto más cercano para entregar tu ayuda.
+        </p>
+        <div style={{ 
+          borderRadius: "24px", 
+          overflow: "hidden", 
+          boxShadow: "0 10px 30px rgba(0,0,0,0.1)",
+          border: "1px solid #e2e8f0"
+        }}>
+          {/* Insertamos el componente que ya creamos */}
+          <MapaPage />
+        </div>
+      </section>
+
       {/* FOOTER */}
       <footer
         style={{
@@ -222,72 +260,28 @@ function Home() {
             </p>
           </div>
 
-          {/* REDES SOCIALES CON EFECTO LUZ */}
           <div style={{ textAlign: "center" }}>
             <h4 style={{ color: "white", marginBottom: "20px" }}>Síguenos</h4>
             <div style={{ display: 'flex', gap: '25px', justifyContent: 'center', alignItems: 'center' }}>
-              {/* Instagram */}
               <a href="https://instagram.com" target="_blank" rel="noreferrer">
                 <img 
                   src="https://cdn.simpleicons.org/instagram/white" 
                   alt="Instagram" 
                   style={{ width: '28px', height: '28px', transition: '0.3s', cursor: 'pointer' }} 
-                  onMouseOver={(e) => {
-                    e.target.style.filter = 'drop-shadow(0 0 10px #E4405F)';
-                    e.target.style.transform = 'scale(1.2)';
-                  }}
-                  onMouseOut={(e) => {
-                    e.target.style.filter = 'none';
-                    e.target.style.transform = 'scale(1)';
-                  }}
                 />
               </a>
-              {/* Twitter (X) */}
               <a href="https://twitter.com" target="_blank" rel="noreferrer">
                 <img 
                   src="https://cdn.simpleicons.org/x/white" 
                   alt="Twitter" 
                   style={{ width: '28px', height: '28px', transition: '0.3s', cursor: 'pointer' }} 
-                  onMouseOver={(e) => {
-                    e.target.style.filter = 'drop-shadow(0 0 10px #ffffff)';
-                    e.target.style.transform = 'scale(1.2)';
-                  }}
-                  onMouseOut={(e) => {
-                    e.target.style.filter = 'none';
-                    e.target.style.transform = 'scale(1)';
-                  }}
                 />
               </a>
-              {/* Facebook */}
               <a href="https://facebook.com" target="_blank" rel="noreferrer">
                 <img 
                   src="https://cdn.simpleicons.org/facebook/white" 
                   alt="Facebook" 
                   style={{ width: '28px', height: '28px', transition: '0.3s', cursor: 'pointer' }} 
-                  onMouseOver={(e) => {
-                    e.target.style.filter = 'drop-shadow(0 0 10px #1877F2)';
-                    e.target.style.transform = 'scale(1.2)';
-                  }}
-                  onMouseOut={(e) => {
-                    e.target.style.filter = 'none';
-                    e.target.style.transform = 'scale(1)';
-                  }}
-                />
-              </a>
-              {/* YouTube */}
-              <a href="https://youtube.com" target="_blank" rel="noreferrer">
-                <img 
-                  src="https://cdn.simpleicons.org/youtube/white" 
-                  alt="YouTube" 
-                  style={{ width: '28px', height: '28px', transition: '0.3s', cursor: 'pointer' }} 
-                  onMouseOver={(e) => {
-                    e.target.style.filter = 'drop-shadow(0 0 10px #FF0000)';
-                    e.target.style.transform = 'scale(1.2)';
-                  }}
-                  onMouseOut={(e) => {
-                    e.target.style.filter = 'none';
-                    e.target.style.transform = 'scale(1)';
-                  }}
                 />
               </a>
             </div>
@@ -295,9 +289,6 @@ function Home() {
 
           <div>
             <h4 style={{ color: "white" }}>Soporte</h4>
-            <p style={{ color: "#94a3b8", marginBottom: "20px" }}>
-              ¿Tienes dudas sobre cómo donar?
-            </p>
             <button
               style={{
                 background: "#6366f1",

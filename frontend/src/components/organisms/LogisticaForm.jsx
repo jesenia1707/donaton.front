@@ -5,7 +5,7 @@ const LogisticaForm = ({ donacionId }) => {
         estado: 'pendiente',
         direccionDestino: '',
         fechaEntrega: '',
-        donacionId: donacionId // Viene de la URL
+        donacionId: donacionId
     });
 
     const handleChange = (e) => {
@@ -14,24 +14,57 @@ const LogisticaForm = ({ donacionId }) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        fetch('http://localhost:8082/api/logistica', {
+
+        fetch('http://localhost:30080/api/logistica', {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
+            headers: {
+                'Content-Type': 'application/json'
+            },
             body: JSON.stringify(envio)
         })
         .then(res => res.json())
-        .then(data => alert("¡Guardado en pgAdmin!"))
-        .catch(err => alert("Error: Revisa si IntelliJ está corriendo"));
+        .then(data => {
+            console.log(data);
+            alert("¡Logística guardada correctamente!");
+        })
+        .catch(err => {
+            console.error(err);
+            alert("Error al guardar logística");
+        });
     };
 
     return (
-        <form onSubmit={handleSubmit} style={{padding: '20px', border: '1px solid #ccc'}}>
-            <input name="direccionDestino" placeholder="Dirección" onChange={handleChange} />
-            <input name="estado" placeholder="Estado" onChange={handleChange} />
-            <input name="fechaEntrega" type="date" onChange={handleChange} />
-            <button type="submit">Guardar en Base de Datos</button>
+        <form
+            onSubmit={handleSubmit}
+            style={{
+                padding: '20px',
+                border: '1px solid #ccc'
+            }}
+        >
+            <input
+                name="direccionDestino"
+                placeholder="Dirección"
+                onChange={handleChange}
+            />
+
+            <input
+                name="estado"
+                placeholder="Estado"
+                onChange={handleChange}
+            />
+
+            <input
+                name="fechaEntrega"
+                type="date"
+                onChange={handleChange}
+            />
+
+            <button type="submit">
+                Guardar en Base de Datos
+            </button>
         </form>
     );
 };
 
 export default LogisticaForm;
+

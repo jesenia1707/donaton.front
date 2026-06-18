@@ -1,16 +1,102 @@
-# React + Vite
+# Frontend Donatón
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Descripción
 
-Currently, two official plugins are available:
+Frontend desarrollado en React para la plataforma Donatón.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Permite a los usuarios registrarse, iniciar sesión, gestionar donaciones, consultar historial y realizar seguimiento de las entregas.
 
-## React Compiler
+## Tecnologías Utilizadas
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* React
+* Vite
+* JavaScript
+* CSS
+* React Router DOM
 
-## Expanding the ESLint configuration
+## Instalación
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Clonar el repositorio:
+
+```bash
+git clone <url-del-repositorio>
+```
+
+Instalar dependencias:
+
+```bash
+npm install
+```
+
+## Ejecución
+
+Iniciar la aplicación:
+
+```bash
+npm run dev
+```
+
+## Puerto por defecto
+
+```text
+http://localhost:5173
+```
+
+## Funcionalidades
+
+### Donantes
+
+* Inicio de sesión
+* Registro de donaciones
+* Consulta de historial
+* Seguimiento de donaciones
+
+### Administradores
+
+* Gestión de usuarios
+* Gestión de donaciones
+* Visualización de información del sistema
+
+### Voluntarios
+
+* Consulta de entregas asignadas
+* Seguimiento de donaciones
+
+## Estructura del Proyecto
+
+```text
+src/
+ ├── components/
+ ├── pages/
+ ├── services/
+ ├── App.jsx
+ └── main.jsx
+
+public/
+```
+
+## Dependencias Principales
+
+* react
+* react-dom
+* react-router-dom
+* vite
+
+## Comunicación con Backend
+
+El frontend consume los siguientes servicios:
+
+* BFF
+* Usuarios
+* Donaciones
+* Logística
+
+mediante API REST.
+
+## Despliegue
+
+La aplicación se encuentra containerizada mediante Docker y desplegada en Kubernetes.
+
+## Proyecto
+
+Donatón – Plataforma de Gestión y Coordinación de Ayuda Humanitaria.

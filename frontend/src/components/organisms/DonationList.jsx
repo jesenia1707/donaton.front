@@ -7,7 +7,7 @@ const DonationList = () => {
 
     useEffect(() => {
         // Aquí llamas a tu backend de donaciones (o usuarios si ahí las guardas)
-        fetch('http://localhost:8080/api/donaciones') 
+        fetch('http://localhost:30321/api/donaciones') 
             .then(res => res.json())
             .then(data => setDonaciones(data))
             .catch(err => console.error("Error cargando donaciones:", err));

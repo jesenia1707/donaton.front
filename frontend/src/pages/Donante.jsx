@@ -16,7 +16,7 @@ function Donante() {
 
   useEffect(() => {
     if (activeTab === "historial") {
-      fetch("http://localhost:30321/api/donaciones")
+      fetch("http://localhost:30082/api/donaciones")
         .then((res) => res.json())
         .then((data) => setDonaciones(data))
         .catch((err) =>
@@ -37,7 +37,7 @@ function Donante() {
 
     try {
       const response = await fetch(
-        "http://localhost:30321/api/donaciones",
+        "http://localhost:30080/api/donaciones",
         {
           method: "POST",
           headers: {

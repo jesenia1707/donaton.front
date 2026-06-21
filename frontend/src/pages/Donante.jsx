@@ -16,7 +16,9 @@ function Donante() {
 
   useEffect(() => {
     if (activeTab === "historial") {
-      fetch("http://localhost:30082/api/donaciones")
+      const usuarioId = localStorage.getItem("usuarioId");
+        fetch(`http://localhost:30321/api/donaciones/usuario/${usuarioId}`
+)
         .then((res) => res.json())
         .then((data) => setDonaciones(data))
         .catch((err) =>
@@ -28,16 +30,19 @@ function Donante() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const donationData = {
-      tipo: tipo,
-      cantidad: Number(cantidad),
-      ubicacion: ubicacion,
-      usuarioId: 1
-    };
+    const usuarioId =
+  localStorage.getItem("usuarioId");
+
+const donationData = {
+  tipo: tipo,
+  cantidad: Number(cantidad),
+  ubicacion: ubicacion,
+  usuarioId: Number(usuarioId)
+};
 
     try {
       const response = await fetch(
-        "http://localhost:30080/api/donaciones",
+        "http://localhost:30321/api/donaciones",
         {
           method: "POST",
           headers: {
@@ -64,8 +69,13 @@ function Donante() {
   };
 
   const handleLogout = () => {
-    navigate("/");
-  };
+
+  localStorage.removeItem("usuarioId");
+  localStorage.removeItem("rol");
+  localStorage.removeItem("nombre");
+
+  navigate("/");
+};
 
   if (sent) {
     return (
